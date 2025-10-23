@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Lr4</string>
+    <string name="back">Назад</string>
+    <string name="next">Далее</string>
+    <string name="morning">Утро</string>
+    <string name="day">День</string>
+    <string name="evening">Вечер</string>
+    <string name="night">Ночь</string>
+    <string name="ex">Задание 4</string>
+    <string name="student">Куратовой А. Е.</string>
+    <string name="group">Т-333902у</string>
+    <string name="morning1">Доброе утречко!</string>
+    <string name="morning2">Это твой список дел на утро:</string>
+    <string name="day1">Уже день</string>
+    <string name="day2">Это твои дела на день:</string>
+    <string name="evening1">Пора отдыхать, уже вечеор!</string>
+    <string name="evening2">А вот и идеи для отдыха:</string>
+    <string name="night1">Уже ночь...</string>
+</resources>
