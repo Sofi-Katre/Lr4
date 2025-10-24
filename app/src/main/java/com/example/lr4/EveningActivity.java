@@ -3,16 +3,20 @@ package com.example.lr4;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
-import android.widget.Button; // Не забудьте импортировать Button
+import android.widget.Button;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
+import android.app.NotificationManager;
+import android.os.Handler;
 
 public class EveningActivity extends AppCompatActivity {
+
+    private final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.evening); // Устанавливаем макет morning.xml
+        setContentView(R.layout.evening); // Устанавливаем макет evening.xml
 
         // Найдите ListView по его ID
         ListView morningList = findViewById(R.id.eveninglist);
@@ -30,6 +34,14 @@ public class EveningActivity extends AppCompatActivity {
         Button backButton = findViewById(R.id.btn_back);
         Button nextButton = findViewById(R.id.btn_next2);
 
+        // Создаем экземпляр класса для пуш-уведомлений
+        MyPushNotification myPushNotification = new MyPushNotification(this, getSystemService(NotificationManager.class));
+
+        // Отправляем уведомление через 2 секунды после открытия окна
+        handler.postDelayed(() -> {
+            myPushNotification.sendNotify("Уведомление", "Пора спать!");
+        }, 2000);
+
         // Слушатель для кнопки "назад"
         backButton.setOnClickListener(v -> {
             // Создаём Intent для возврата на MainActivity
@@ -45,4 +57,12 @@ public class EveningActivity extends AppCompatActivity {
         });
 
     }
+
+    // Метод для безопасной отмены Handler
+    @Override
+    protected void onStop() {
+        super.onStop();
+        handler.removeCallbacksAndMessages(null);
+    }
+
 }
