@@ -12,7 +12,7 @@ public class EveningActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.evening); // Устанавливаем макет morning.xml
+        setContentView(R.layout.evening); // Устанавливаем макет evening.xml
 
         // Найдите ListView по его ID
         ListView morningList = findViewById(R.id.eveninglist);
