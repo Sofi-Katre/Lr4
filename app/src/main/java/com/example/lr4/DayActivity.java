@@ -39,7 +39,7 @@ public class DayActivity extends AppCompatActivity {
 
         // Отправляем уведомление через 2 секунды после открытия окна
         handler.postDelayed(() -> {
-            myPushNotification.sendNotify("Уведомление", "Пора спать!");
+            myPushNotification.sendNotify("Уведомление", "Скоро конец рабочего дня!");
         }, 2000);
 
         // Слушатель для кнопки "назад"
